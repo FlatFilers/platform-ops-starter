@@ -1,13 +1,38 @@
 # platform-ops-starter
 This repo is a starter project used by the Flatfile Platform Operations team. 
 
+## Requirements
+- Node 18+
+- PNPM v7
+
+```bash
+# clone this repo:
+git clone https://github.com/FlatFilers/platform-ops-starter.git
+cd platform-ops-starter
+
+# ensure you are using at least NodeJS v18, e.g. if you use NVM:
+nvm use 18
+
+# install dependencies:
+pnpm i
+```
+
+
 ## Getting Started
+Flatfile uses the concept of an "agent" and an event system to create and manage your Spaces and Workbooks (e.g. the things that hold data) as well as manipulate data. An easy way to get started is to run the agent locally on your machine where we will send all the events to be handled. Get started quickly by:
 1. Go to one of the Flatfile Platform environments and create an account
 1. Switch to the Development environment, go to `Developer Settings` and copy your secret key
 1. Deploy or run the listener locally -- `pnpm run dev --api-url=https://platform.uk.flatfile.com/api` (you only need the `--api-url` if you are using a region outside of the default US)
+1. Choose the API key option and paste in your secret key 
 1. Create a new space in the Flatfile dashboard
 1. Upload a file
 
+## Deploying 
+After getting the basics sorted locally, deploy your agent to the Flatfile cloud so that it can listen for events independent of your local machine:
+1. `Ctrl+c` to stop running the local agent
+1. `pnpm run deploy --api-url=...`
+1. Choose the API key option and paste in your secret key 
+1. Now, go to the Flatfile dashboard and create a space - this will open a new tab where you can upload data
 
 ## Data Shape
 It's a pretty simple list of contacts: 
