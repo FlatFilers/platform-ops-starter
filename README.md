@@ -1,5 +1,5 @@
 # platform-ops-starter
-This repo is a starter project used by the Flatfile Platform Operations team. 
+This repo contains a few starter projects used by the Flatfile Platform Operations team to ensure proof-of-life on environments. 
 
 ## Requirements
 - Node 18+
@@ -8,7 +8,7 @@ This repo is a starter project used by the Flatfile Platform Operations team.
 ```bash
 # clone this repo:
 git clone https://github.com/FlatFilers/platform-ops-starter.git
-cd platform-ops-starter
+cd platform-ops-starter/use-cases/listener
 
 # ensure you are using at least NodeJS v18, e.g. if you use NVM:
 nvm use 18
@@ -18,7 +18,7 @@ pnpm i
 ```
 
 
-## Getting Started
+# Getting Started with the Listener
 Flatfile uses the concept of an "agent" and an event system to create and manage your Spaces and Workbooks (e.g. the things that hold data) as well as manipulate data. An easy way to get started is to run the agent locally on your machine where we will send all the events to be handled. Get started quickly by:
 1. Go to one of the Flatfile Platform environments and create an account
 1. Switch to the Development environment, go to `Developer Settings` and copy your secret key
@@ -51,6 +51,15 @@ Elnora      Ballard     ijvic@woznuppam.pg
 ```
 
 Generate your own or use the provided fake data `getting-started.csv`
+
+# Getting Started with React
+The `use-cases/react` project contains a minimal starter for embedding a space into a webpage. A new space is created each time it launches. To use this project, go to your dashboard Developer Settings, and collect the following:
+- Environment ID
+- Publishable key
+
+Edit the file `use-cases/react/src/App.tsx` and plug in the environment ID and the publishable key, then add the appropriate regional API endpoint. Change directories into the `react` folder and run `npm run start`
+
+# Resources
 
 ## Egressing Data
 The `sheets/:sheetId/records` endpoint is used to page through data. To obtain the ID for the sheet, first copy your environment ID and secret key from the `Developer Settings` page, fetch a list of Spaces to find the Space ID, then fetch the workbook ID (alternatively, reverse engineer the ID from the network tab while in the space itself). 
