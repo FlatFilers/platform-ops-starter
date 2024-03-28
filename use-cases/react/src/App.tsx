@@ -8,9 +8,9 @@ import { listener } from "./listeners/simple";
 export default function App() {
   const spaceProps: ISpace = {
     name: "Embedded Space",
-    publishableKey: "pk_162e5c016ced44e0ab018094d5aca178",
-    environmentId: "au_env_L0lgyWTf",
-    apiUrl: "https://platform.au.flatfile.com/api",
+    publishableKey: "pk_71431d36b6394e1297108f85ed5e3ac5",
+    environmentId: "eu_env_i337QgNq",
+    apiUrl: "https://platform.eu.flatfile.com/api",
     workbook,
     listener,
     sidebarConfig: {

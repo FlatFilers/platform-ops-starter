@@ -3,7 +3,8 @@ import { FlatfileClient } from "@flatfile/api";
 import { recordHook } from "@flatfile/plugin-record-hook";
 
 const api = new FlatfileClient({
-  environment: 'https://platform.ca.flatfile.com/api/v1'
+  // edit this for your region!
+  environment: 'https://platform.flatfile.com/api/v1'
 });
 
 /**

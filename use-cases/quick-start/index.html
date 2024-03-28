@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello, world!</title>
+    <script src="https://unpkg.com/@flatfile/javascript/dist/index.js"></script>
+    <script src="./blueprint.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+
+    <script>
+      window.onload = function () {
+        FlatFileJavaScript.startFlatfile({
+          publishableKey: "pk_71431d36b6394e1297108f85ed5e3ac5",
+          environmentId: "eu_env_i337QgNq",
+          spaceBody: {
+            namespace: "portal",
+          },
+          apiUrl: "https://platform.eu.flatfile.com/api",
+          // sheet: blueprint,
+          onSubmit: async ({ sheet }) => {
+            const data = await sheet.allData();
+            console.log("onSubmit", data);
+          },
+          onRecordHook: (record) => {
+            const name = record.get("firstName");
+            if (name === "Elisa") {
+              record.addError("firstName", "");
+            }
+          },
+          closeSpace: {
+            operation: "simpleSubmitAction",
+            onClose: () => setShowSpace(false),
+          },
+        });
+      };
+    </script>
+  </head>
+</html>
