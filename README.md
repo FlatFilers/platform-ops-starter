@@ -20,8 +20,9 @@ pnpm i
 
 # Getting Started with the Listener
 Flatfile uses the concept of an "agent" and an event system to create and manage your Spaces and Workbooks (e.g. the things that hold data) as well as manipulate data. An easy way to get started is to run the agent locally on your machine where we will send all the events to be handled. Get started quickly by:
-1. Go to one of the Flatfile Platform environments and create an account
+1. Go to one of the Flatfile Platform environments and create an account, then install the Portal application
 1. Switch to the Development environment, go to `Developer Settings` and copy your secret key
+2. If you are running the `develop` command (not deploy) you will also need to set the environment variable `export FLATFILE_API_URL=https://platform.uk.flatfile.com/api` (or whichever environment you are using)
 1. Deploy or run the listener locally -- `pnpm run dev --api-url=https://platform.uk.flatfile.com/api` (you only need the `--api-url` if you are using a region outside of the default US)
 1. Choose the API key option and paste in your secret key 
 1. Create a new space in the Flatfile dashboard
